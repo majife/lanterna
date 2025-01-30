@@ -37,7 +37,7 @@ public final class LocalizedString {
     /**
      * "Cancel"
      */
-    public final static LocalizedString Cancel = new LocalizedString("short.label.cancel", "Cancel");
+    public final static LocalizedString Cancel = new LocalizedString("short.label.cancel", "Cancelar");
     /**
      * "Yes"
      */
