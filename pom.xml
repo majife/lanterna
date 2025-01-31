@@ -67,23 +67,16 @@
         </dependency>
     </dependencies>
 
-    <!--
-      Quitar la config de Sonatype/OSSRH
-      <distributionManagement> ... </distributionManagement> original
-      y en su lugar usar GitHub Packages:
-    -->
     <distributionManagement>
         <repository>
             <id>github</id>
             <name>GitHub Packages for lanterna</name>
-            <!-- Ajusta con tu usuario y nombre de repo en GitHub -->
             <url>https://maven.pkg.github.com/majife/lanterna</url>
         </repository>
     </distributionManagement>
 
     <build>
         <plugins>
-            <!-- Plugin de compilación principal -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -114,7 +107,6 @@
                 </executions>
             </plugin>
 
-            <!-- Plugin para generar jar y test-jar con Multi-Release en el manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -135,7 +127,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Enforcer plugin para versiones mínimas -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -185,20 +176,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- (Eliminado nexus-staging-maven-plugin de Sonatype)
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            -->
         </plugins>
     </build>
 
@@ -255,9 +232,9 @@
 
     <developers>
         <developer>
-            <id>Manu</id>
-            <name>manu</name>
-            <email>siox@siox.es</email>
+        <id>Martin</id>
+        <name>Martin Berglund</name>
+        <email>mabe02@gmail.com</email>
         </developer>
     </developers>
 </project>
