@@ -1,5 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.googlecode.lanterna</groupId>
     <artifactId>lanterna</artifactId>
     <packaging>jar</packaging>
@@ -27,9 +32,10 @@
         <connection>scm:git:git@github.com:mabe02/lanterna.git</connection>
         <developerConnection>scm:git:git@github.com:mabe02/lanterna.git</developerConnection>
         <url>https://github.com/mabe02/lanterna</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
+    <!-- Dependencias (JNA opcional, JUnit, etc.) -->
     <dependencies>
         <!-- Optional JNA dependencies -->
         <dependency>
@@ -61,8 +67,23 @@
         </dependency>
     </dependencies>
 
+    <!--
+      Quitar la config de Sonatype/OSSRH
+      <distributionManagement> ... </distributionManagement> original
+      y en su lugar usar GitHub Packages:
+    -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages for lanterna</name>
+            <!-- Ajusta con tu usuario y nombre de repo en GitHub -->
+            <url>https://maven.pkg.github.com/majife/lanterna</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
+            <!-- Plugin de compilación principal -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -92,6 +113,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Plugin para generar jar y test-jar con Multi-Release en el manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -111,6 +134,8 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <!-- Enforcer plugin para versiones mínimas -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -131,11 +156,15 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Clirr plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>clirr-maven-plugin</artifactId>
                 <version>2.8</version>
             </plugin>
+
+            <!-- Jacoco para coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -156,6 +185,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- (Eliminado nexus-staging-maven-plugin de Sonatype)
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -167,15 +198,9 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <profiles>
         <profile>
@@ -230,9 +255,9 @@
 
     <developers>
         <developer>
-            <id>Martin</id>
-            <name>Martin Berglund</name>
-            <email>mabe02@gmail.com</email>
+            <id>Manu</id>
+            <name>manu</name>
+            <email>siox@siox.es</email>
         </developer>
     </developers>
 </project>

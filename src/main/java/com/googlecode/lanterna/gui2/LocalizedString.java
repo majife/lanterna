@@ -33,7 +33,7 @@ public final class LocalizedString {
     /**
      * "OK"
      */
-    public final static LocalizedString OK = new LocalizedString("short.label.ok", "OK");
+    public final static LocalizedString OK = new LocalizedString("short.label.ok", "Aceptar");
     /**
      * "Cancel"
      */
@@ -41,7 +41,7 @@ public final class LocalizedString {
     /**
      * "Yes"
      */
-    public final static LocalizedString Yes = new LocalizedString("short.label.yes", "Yes");
+    public final static LocalizedString Yes = new LocalizedString("short.label.yes", "Si");
     /**
      * "No"
      */
@@ -49,31 +49,31 @@ public final class LocalizedString {
     /**
      * "Close"
      */
-    public final static LocalizedString Close = new LocalizedString("short.label.close", "Close");
+    public final static LocalizedString Close = new LocalizedString("short.label.close", "Cerrar");
     /**
      * "Abort"
      */
-    public final static LocalizedString Abort = new LocalizedString("short.label.abort", "Abort");
+    public final static LocalizedString Abort = new LocalizedString("short.label.abort", "Abortar");
     /**
      * "Ignore"
      */
-    public final static LocalizedString Ignore = new LocalizedString("short.label.ignore", "Ignore");
+    public final static LocalizedString Ignore = new LocalizedString("short.label.ignore", "Ignorar");
     /**
      * "Retry"
      */
-    public final static LocalizedString Retry = new LocalizedString("short.label.retry", "Retry");
+    public final static LocalizedString Retry = new LocalizedString("short.label.retry", "Reintentar");
     /**
      * "Continue"
      */
-    public final static LocalizedString Continue = new LocalizedString("short.label.continue", "Continue");
+    public final static LocalizedString Continue = new LocalizedString("short.label.continue", "Continuar");
     /**
      * "Open"
      */
-    public final static LocalizedString Open = new LocalizedString("short.label.open", "Open");
+    public final static LocalizedString Open = new LocalizedString("short.label.open", "Abrir");
     /**
      * "Save"
      */
-    public final static LocalizedString Save = new LocalizedString("short.label.save", "Save");
+    public final static LocalizedString Save = new LocalizedString("short.label.save", "Cerrar");
 
     private final String defaultValue;
     private final String bundleKey;
